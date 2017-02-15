@@ -10,6 +10,12 @@
       "src": "http://sreip.bplaced.com/feinstaub/images/feinstaub-meter_2.png",
       "sizes": " 567 × 567",
       "type": "image/png"
+    },
+    {
+      "src": "http://sreip.bplaced.com/feinstaub/images/feinstaub-meter_kl.png",
+      "sizes": "144x144",
+      "type": "image/png"
     }
-  ]
+  ],
+  "background_color": "65497f"
 }
