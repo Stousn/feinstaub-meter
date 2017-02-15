@@ -6,6 +6,8 @@ It was adopted for Leoben
 
 @PeterTheOne:
 - Original site
+- http://feinstaub-graz.at/
 
 @Stousn:
 - adoptions for Leoben
+- http://sreip.bplaced.net/feinstaub/
