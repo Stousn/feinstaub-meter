@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 
 header('Access-Control-Allow-Origin: *');
 
+date_default_timezone_set('Europe/Vienna');
+
 $cacheFile = 'cache.json';
 $today = new DateTime();
 $yesterday = new DateTime();
@@ -20,7 +22,8 @@ if (file_exists($cacheFile)) {
 }
 
 $url = 'http://app.luis.steiermark.at/luft2/auswertung.php' .
-    '?station1=172&station2=&komponente1=125&station3=&station4=&komponente2=' .
+  //  '?station1=143&station2=&komponente1=125&station3=&station4=&komponente2=' .
+    '?station1=143&station2=142&komponente1=125&station3=141&station4=&komponente2=125'.
     '&von_tag=' . $yesterday->format('j') . '&von_monat=' . $yesterday->format('n') . '&von_jahr=' . $yesterday->format('Y') . '&mittelwert=21' .
     '&bis_tag=' . $today->format('j') . '&bis_monat=' . $today->format('n') . '&bis_jahr=' . $today->format('Y');
 
@@ -31,7 +34,12 @@ $html = curl_exec($ch);
 curl_close($ch);
 
 $dom = new DOMDocument();
+
+$internalErrors = libxml_use_internal_errors(true);
+
 $dom->loadHTML($html);
+
+libxml_use_internal_errors($internalErrors);
 
 $xpath = new DOMXPath($dom);
 $value = $xpath->query('//table[1]//table[3]//tr[4]//td[2]/text()')->item(0)->nodeValue;
