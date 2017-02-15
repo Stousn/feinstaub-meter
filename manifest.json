@@ -2,16 +2,20 @@
   "name": "Ist heute ein Feinstaubtag in Leoben?",
   "short_name": "Feinstaub-Meter",
   "lang": "de",
+  "start_url": "/feinstaub/index.html",
   "display": "standalone",
-  "theme_color": "#65497f",
+  "theme_color": "#583E74",
   "icons": [
     {
-      "src": "http://sreip.bplaced.com/feinstaub/images/feinstaub-meter_kl.png"
+      "src": "http://sreip.bplaced.com/feinstaub/images/feinstaub-meter_kl2.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
+      "src": "http://sreip.bplaced.com/feinstaub/images/feinstaub-meter_kl.png",
       "sizes": "144x144",
       "type": "image/png"
     }
   ],
-  "background_color": "#65497f"
+  "background_color": "#583E74"
 }
