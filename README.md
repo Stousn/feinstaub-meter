@@ -1,8 +1,11 @@
-feinstaub-meter
-===============
+feinstaub-meter for Leoben
+==========================
 
-is a website das displays recent air particulates infor for graz.
+Originally this project was a air pollution information site for Graz.
+It was adopted for Leoben
 
+@PeterTheOne:
+- Original site
 
 @Stousn:
-- change page for Leoben
+- adoptions for Leoben
