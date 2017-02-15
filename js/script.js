@@ -1,13 +1,38 @@
 (function ($) {
   'use strict';
+    var url = 'backend/index.php';
 
   $(function () {
 
     if (navigator.userAgent.match(/iPhone|iPad|Android/i)) {
       $('.share-btn.whatsapp,.share-btn.facebook-messenger').css('display', 'inline-block');
     }
+    var mem = 0;
+    $('button[name=button2]').on('click', function (event) {
+        //console.log("Test");
+        if(mem==0) {
+        url = 'backend/index0.php';
+        $.get(url, function (data) {
+          particleValue = data.value;
+          startAnimation();
+        }, 'json');
+        startAnimation();
+        $('button[name=button2]').text("Tages Mittelwert");
 
-    $('button').on('click', function (event) {
+        mem=1;
+      } else {
+        url = 'backend/index.php';
+        $.get(url, function (data) {
+          particleValue = data.value;
+          startAnimation();
+        }, 'json');
+        startAnimation();
+        $('button[name=button2]').text("Tages Höchstwert");
+        mem=0;
+      }
+    });
+
+    $('button[name=button1]').on('click', function (event) {
       if ($('article').hasClass('show')) {
         $('article').removeClass('show');
       } else {
@@ -36,7 +61,7 @@
     var particleValue = 0;
 
   //  var url = 'https://kamerascheu.at/feinstaub-meter/index.php';
-      var url = 'backend/index.php';
+    //  var url = 'backend/index.php';
     $.get(url, function (data) {
       particleValue = data.value;
       startAnimation();
